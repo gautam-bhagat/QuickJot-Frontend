@@ -1,13 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --primary-white : #FFF;
+  --primary-black : #000;
+  --primary-grey  : #b3b3b3;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Manrope', sans-serif,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* ===================== Navbar ============================= */
+.navbar {
+  height: 8vh;
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.navbar .nav-center ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-center ul li{
+  display: inline;
+  margin-left: 15px;
+}
+
+.navbar .nav-center ul li a{
+  text-decoration: none;
+  color: var(--primary-black);
+}
+
+.navbar .nav-right ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-right ul li{
+  display: inline;
+  margin-left: 15px;
+}
+
+.navbar .nav-right ul li a{
+  text-decoration: none;
+  padding:5px 15px;
+  margin: 5px;
+  color: var(--primary-black);
+  border-radius: 50px;
+  border: #000 solid;
+}
+
+.navbar .nav-right ul li a:hover{
+  transition: ease-in 0.3s;
+  padding:8px 18px;
+}
+
+.navbar .nav-right ul li #signin-btn{
+  color: var(--primary-white);
+  background-color: var(--primary-black);
+}
+
+
+/* =========================== Home Component ======================== */
+.home{
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 78vh;
+}
+
+.home-content {
+  width: 40%;
+  height: 100%;
+  text-align: left;
+  align-items: center;
+}
+
+.tagline{
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.home-image{
+  background: url('./Assets/Add\ notes.gif');
+  background-size: cover;
+}
+
+
+/* ============= Footer ======================== */
+.footer{
+  margin-top: auto;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+  background-color: var(--primary-white);
+  
+}
+
+.social-links{
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon{
+  padding: 10px;
+  font-size: 25px;
+}
+
+.heart{
+  color: red;
+}
+
+/* SIGNIN CSS */
+.signin-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100vw;
+}
+
+.signin-form{
+  height: 70%;
+  width: 30%;
+  background-color: #e3e3e3;
+}
+
+
+/* ================== mobile View */
+@media screen and (max-width: 800px) {
+  .navbar{
+    height: 40px;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  
+
+  
 }

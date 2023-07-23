@@ -1,27 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Link,useLocation } from 'react-router-dom'
+import SigninSignup from './SigninSignup';
+
 
 function Navbar() {
+
+
+  let location = useLocation();
+
+  useEffect(() => {
+    // Google Analytics
+    console.log(location.pathname)
+  }, [location]);
 
   return (
     <header className='navbar'>
       <div className="nav-left">
-            <h1 ><strong>QuickJot</strong></h1>
+            <h1>QuickJot</h1>
       </div>
       <div className="nav-center">
       <ul>
-            <li><a href="#"><b>Home</b></a></li>
-            <li><a href="#"><b>Features</b></a></li>
-            <li><a href="#"><b>About</b></a></li>
-            <li><a href="#"><b>FAQ</b></a></li>
+            <li><Link className={`${location.pathname==='/'? 'active' : ''}`} to="/">Home</Link></li>
+            <li><Link className={`${location.pathname==='/features'? 'active' : ''}`} to="/features">Features</Link></li>
+            <li><Link className={`${location.pathname==='/about'? 'active' : ''}`} to="/about">About</Link></li>
+            <li><Link className={`${location.pathname==='/faq'? 'active' : ''}`} to="/faq">FAQ</Link></li>
         </ul>
       </div>
       <div className="nav-right">
-       
-            <ul>
-                <li><a id='signup-btn' href="#" target="_blank" rel="noopener noreferrer">Sign Up</a></li>
-                <li><a id='signin-btn' href="#" target="_blank" rel="noopener noreferrer">Sign In</a></li>
-                
-            </ul>
+      
+          <SigninSignup/>
         
       </div>
     </header>

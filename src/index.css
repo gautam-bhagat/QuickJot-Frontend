@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
   --primary-white : #FFF;
   --primary-black : #000;
   --primary-grey  : #b3b3b3;
+  --primary-font : 'Poppins',sans-serif;
 }
 
 
 body {
   margin: 0;
-  font-family: 'Manrope', sans-serif,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: var(--primary-font),-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -82,6 +83,9 @@ code {
   background-color: var(--primary-black);
 }
 
+.active{
+  font-weight: 600;
+}
 
 /* =========================== Home Component ======================== */
 .home{
@@ -100,7 +104,7 @@ code {
 
 .tagline{
   font-size: 75px;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .home-image{
@@ -147,25 +151,56 @@ code {
   justify-content: center;
   align-items: center;
   height: 80vh;
-  width: 100vw;
 }
 
 .signin-form{
-  height: 70%;
+  height: auto;
   width: 30%;
-  background-color: #e3e3e3;
+  padding: 20px 0px;
+  border-radius: 50px;
+  background-color: var(--primary-white);
+  border: 2px solid #000;
+}
+
+.signin-form .form-ele{
+  width: 100%;
+  margin: 30px 10px;
+  
+  justify-content: center;
 }
 
 
-/* ================== mobile View */
-@media screen and (max-width: 800px) {
-  .navbar{
-    height: 40px;
-    flex-direction: column;
-    padding: 0;
-  }
 
-  
+.input-form{
+  padding: 5px 10px;
+  width: 100px;
+  background-color: transparent;
+  color: var(--primary-black);
+  font-family: var(--primary-font);
+  font-size: 16px;
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #232323;
+}
 
-  
+.input-form:focus{
+  transition: ease-in;
+  border-bottom: 2px solid black;
+}
+
+input[type=submit]{
+  border: none;
+  font-size: large;
+  padding: 15px 30px;
+  border-radius: 20px;
+  margin-top: 15px;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  font-family: var(--primary-font);
+}
+
+.logo-form-link{
+  text-decoration: none;
+  color: var(--primary-black);
 }

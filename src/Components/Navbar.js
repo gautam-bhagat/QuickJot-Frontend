@@ -25,7 +25,7 @@ function Navbar() {
             <li><Link className={`${location.pathname==='/'? 'active' : ''}`} to="/">Home</Link></li>
             <li><Link className={`${location.pathname==='/features'? 'active' : ''}`} to="/features">Features</Link></li>
             <li><Link className={`${location.pathname==='/about'? 'active' : ''}`} to="/about">About</Link></li>
-            <li><Link className={`${location.pathname==='/faq'? 'active' : ''}`} to="/faq">FAQ</Link></li>
+            <li><Link className={`${location.pathname==='/faq'? 'active' : ''}`} to="/">FAQ</Link></li>
         </ul>
       </div>
       <div className="nav-right">

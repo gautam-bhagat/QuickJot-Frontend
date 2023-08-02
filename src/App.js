@@ -34,7 +34,15 @@ function App() {
               <>
                 <Navbar />
                 <h1>About</h1>
-                 
+                 <p>In developement</p>
+                <Footer />
+              </>
+            } />
+            <Route path='/features' element={
+              <>
+                <Navbar />
+                <h1>Features</h1>
+                 <p>In developement</p>
                 <Footer />
               </>
             } />

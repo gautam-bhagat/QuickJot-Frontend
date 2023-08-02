@@ -16,7 +16,7 @@ function Note(props) {
       <div className='tag'><span >{props.note.tag ? "#"+props.note.tag : ""}</span>
 
       <button className='del-btn' onClick={()=>{deleteNoteApi(props.note._id)}}><i className="fa-solid fa-trash"></i></button>
-      <button className='del-btn' onClick={()=>{openUpdateModal(props.note)}}>up</button></div>
+      <button className='del-btn' onClick={()=>{openUpdateModal(props.note)}}><i class="fa-solid fa-pen-to-square"></i></button></div>
       
     </div>
   )

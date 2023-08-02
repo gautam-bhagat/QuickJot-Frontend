@@ -112,7 +112,7 @@ function Notes() {
         contentLabel="Example Modal"
       >
         <div className="df">
-          <h2>Add Note</h2>
+          <h2>Add ToDo</h2>
           <button className="cross-btn" onClick={closeModal}>
             <i className="fa-solid fa-circle-xmark"></i>
           </button>
@@ -152,7 +152,7 @@ function Notes() {
               onChange={onChange}
               id="tag"
               name="tag"
-              placeholder="Tag"
+              placeholder="Status"
             />
           </div>
           <div className="form-ele">
@@ -165,7 +165,7 @@ function Notes() {
       <Modal isOpen={updateModalIsOpen} onRequestClose={closeModal}>
 
       <div className="df">
-          <h2>Note</h2>
+          <h2>Task</h2>
           <button className="cross-btn" onClick={closeModal}>
             <i className="fa-solid fa-circle-xmark"></i>
           </button>
@@ -210,7 +210,7 @@ function Notes() {
                 id="tag"
                 name="tag"
                 defaultValue={updateNoteItem.tag}
-                placeholder="Tag"
+                placeholder="Status"
                 style={{ width: "85%", resize: "none" }}
               />
             </div>
@@ -223,11 +223,11 @@ function Notes() {
 
       <div className="note-header">
         <div>
-          <h2 style={text}>Notes </h2>
+          <h2 style={text}>To-Dos </h2>
         </div>
         <div>
           <button className="new-note-btn" onClick={openModal }>
-            <i className="fa-solid fa-plus"></i> New Note
+            <i className="fa-solid fa-plus"></i> New Task
           </button>
         </div>
       </div>

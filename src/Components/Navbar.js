@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link,useLocation } from 'react-router-dom'
 import SigninSignup from './SigninSignup';
+import Logoutbtn from './Logoutbtn';
 
 
 function Navbar() {
@@ -10,7 +11,8 @@ function Navbar() {
 
   useEffect(() => {
     // Google Analytics
-    console.log(location.pathname)
+    // console.log(location.pathname)
+    // console.log(localStorage.getItem('logged'))
   }, [location]);
 
   return (
@@ -27,8 +29,10 @@ function Navbar() {
         </ul>
       </div>
       <div className="nav-right">
-      
-          <SigninSignup/>
+        {
+          localStorage.getItem('logged')?<Logoutbtn/>:<SigninSignup/>
+        }
+          
         
       </div>
     </header>

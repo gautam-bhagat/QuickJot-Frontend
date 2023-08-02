@@ -1,17 +1,38 @@
 import React ,{useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 function Signup() {
     const [registration,setRegister] = useState({name : "",email : "",username:"",password:""})
+    let navigate = useNavigate();
 
     const onChange = (e) =>{
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setRegister({...registration , [e.target.name]:e.target.value})
     }
 
     const handleSignup = async (e) =>{
         e.preventDefault();
-        const response =  await fetch('')
+        const response =  await fetch('https://dark-gold-caterpillar-veil.cyclic.cloud/api/auth/createuser',{
+            method :"POST",
+            headers : {
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({
+                name:registration.name,
+                email : registration.email,
+                username : registration.username,
+                password: registration.password})
+        });
+
+        const json = await response.json();
+        // console.log(json)
+        if(json.success===1){
+            alert(json.message)
+            return navigate('/')
+        }else{
+
+            alert(json.message)
+        }
     }
 
     return (

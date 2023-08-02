@@ -8,7 +8,7 @@ function Signin() {
 
     const handleLogin = async (e) =>{
         e.preventDefault();
-        const res = await fetch("http://localhost:5000/api/auth/login",{
+        const res = await fetch("https://dark-gold-caterpillar-veil.cyclic.cloud/api/auth/login",{
             method : "POST",
             headers : {
                 'Content-Type' : 'application/json'
@@ -17,9 +17,9 @@ function Signin() {
         });
 
         const json = await res.json();
-        console.log(json)
+        // console.log(json)
         if(json.success === 1){
-            localStorage.setItem('loggedin',1);
+            localStorage.setItem('logged',true);
             localStorage.setItem('authtoken',json.authtoken);
             return navigate('/')
         }else{
